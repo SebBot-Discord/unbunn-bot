@@ -407,11 +407,11 @@ try {
 		cmd = true;
 		message.channel.startTyping();
         message.reply({embed: {
-            title: "Seb Bot",
+            title: "Unbunn Bot",
             color: 3750201,
-	    description: `**Running SebBot ${ver}**\nSeb Bot is an open-source multi-purpose discord bot with many fun + NSFW commands. You can see a list of all the commands at **__https://sebbot.tk/__**. Join the support service to speak to the owner and request help: **__https://discord.gg/8MQx6J7/__**`,
+	    description: `**Running SebBot ${ver}**\nUnbunn Bot is an open-source multi-purpose discord bot with many fun + NSFW commands. You can see a list of all the commands at **__https://sebbot.tk/branch/unbunn/index.html__**.`,
             footer: {
-                text: "Seb Bot created by SebbyTheGODKid#0426",
+                text: "Unbunn Bot created by SebbyTheGODKid#0426",
                 icon_url: "https://cdn.discordapp.com/avatars/408718297400475668/c7b9be183d4cf2029912533e3afc2e69.png"
             },
         }})
@@ -427,7 +427,7 @@ try {
   - Bans <user> from the server with reason <reason>
 `+"```",
 					    footer: {
-						text: "Seb Bot created by SebbyTheGODKid#0426",
+						text: "Unbunn Bot created by SebbyTheGODKid#0426",
 						icon_url: "https://cdn.discordapp.com/avatars/408718297400475668/c7b9be183d4cf2029912533e3afc2e69.png"
 					    },
 					}})
@@ -479,10 +479,10 @@ try {
 		cmd = true;
 		message.channel.startTyping();
 		message.reply({embed:{
-			title: "Invite Seb Bot",
+			title: "Invite Unbunn Bot",
             color: 3750201,
 			url: "https://discordapp.com/api/oauth2/authorize?client_id=408718297400475668&permissions=67160064&scope=bot",
-			//description: "(**Invite**)[https://discordapp.com/api/oauth2/authorize?client_id=408718297400475668&permissions=67160064&scope=bot] **Seb Bot to your server**",
+			//description: "(**Invite**)[https://discordapp.com/api/oauth2/authorize?client_id=408718297400475668&permissions=67160064&scope=bot] **Unbunn Bot to your server**",
 			footer: {
                 text: `Say "bunn!help" for a list of commands`,
                 icon_url: "https://cdn.discordapp.com/avatars/408718297400475668/c7b9be183d4cf2029912533e3afc2e69.png"
@@ -499,7 +499,7 @@ try {
 			message.reply(error);
 			return;
 		};
-        var joke = jparsestring(body).attachments[0].text.replace("Dad","Seb Bot")
+        var joke = jparsestring(body).attachments[0].text.replace("Dad","Unbunn Bot")
         message.reply({embed:{
             color: 3750201,
             title: "Seb Joke",
@@ -898,7 +898,7 @@ try {
                   color: 3750201,
                   title: "Statistics",
                   description: `
-**Seb Bot Stats**
+**Unbunn Bot Stats**
 Running in ` + `${client.guilds.size}` + ` servers
 Running for ` + `:clock1: ${time}` + `
 Endianness: ` + "`" + (os.endianness() == "LE" ? "Little Endian" : "Big Endian") + "`" + `
@@ -1389,12 +1389,12 @@ rule34 `+"`"+"ONLINE"+"`"+`
             message.reply(Emojis.loading + " Disconnecting...").then((msg) => { voice = null; loader = msg });
 	    if (voice){ voice.leave(); setTimeout(function(){ loader.delete(); }, 500); message.reply("Disconnected successfully!"); } else { message.reply(Emojis.error + " I'm not in a voice channel"); }
 	  } else {
-	    message.reply(Emojis.warning + ' Only the person who added Seb Bot to the voice channel can do this');
+	    message.reply(Emojis.warning + ' Only the person who added Unbunn Bot to the voice channel can do this');
 	  }
 	}
 	/*if (message.content.startsWith('bunn!play')) {
 		if (!voice){ message.reply(Emojis.error + " I'm not in a voice channel, say `bunn!join` first"); return; }
-		//if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Seb Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the song."); }
+		//if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Unbunn Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the song."); }
 		var file = message.content.substr(10);
 		var loader = null;
 		var mp = null;
@@ -1425,7 +1425,7 @@ rule34 `+"`"+"ONLINE"+"`"+`
 			message.reply(Emojis.loading + " Loading audio...").then((msg) => loader = msg);
 			var stream = ytdl(file, { filter : 'audioonly' });
 			if (file.includes(",")){
-				if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Seb Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the que."); return; }
+				if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Unbunn Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the que."); return; }
 				playlist = file.replace(/\n/g, "").replace(/ /g, "").split(",");
 				playlist.shift();
 				voice.leave();
@@ -1519,7 +1519,7 @@ rule34 `+"`"+"ONLINE"+"`"+`
 	}
 	if (message.content.startsWith('bunn!play')) {
 		if (!voice){ message.reply(Emojis.error + " I'm not in a voice channel, say `bunn!join` first"); return; }
-		//if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Seb Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the song."); }
+		//if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Unbunn Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the song."); }
 		var _file = message.content.substr(10);
 		var loader = null;
 		var mp = null;
