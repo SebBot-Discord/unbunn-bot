@@ -48,6 +48,58 @@ dbl.webhook.on('vote', vote => {
   console.log(vote);
   upgraded.push(vote.id);
 });
+function numToEmoji(input){
+	var nums = {"0":":zero:","1":":one:","2":":two:","3":":three:","4":":four:","5":":five:","6":":six:","7":":seven:","8":":eight:","9":":nine:"};
+	return `${input}`.replace(/[0-9]/g, function (x) {
+            return nums[x];
+        });
+}
+function doNightlyUpdate(skap){
+  var data = undefined;
+  request(API_KEY, function(error, response, body){
+    var data = JSON.parse(body)
+    var _fields = [
+      {
+        name: "⭐ Favorites",
+        value: numToEmoji(data.FavoritedCount),
+        inline: true
+      },
+      {
+        name: "👍 Likes",
+        value: numToEmoji(data.TotalUpVotes),
+        inline: true
+      },
+      {
+        name: "👎 Dislikes",
+        value: numToEmoji(data.TotalDownVotes),
+        inline: true
+      },
+      {
+        name: "👁️ Plays",
+        value: numToEmoji(data.VisitedCount),
+        inline: true
+      },
+      {
+        name: "👨 Online",
+        value: numToEmoji(data.OnlineCount),
+        inline: true
+      },
+      {
+        name: "⬆️ Last Updated",
+        value: numToEmoji(data.Updated),
+        inline: true
+      }
+    ]
+    var _embed = {
+      title: "Nightly Update",
+      color: 3394815,
+      fields: _fields,
+      timestamp: new Date()
+    }
+    var unix = Math.round(+new Date()/1000);
+    return {content: "@here **Nightly Update**", embed: _embed};
+  });
+}
 const request = require('request')
 //const dbl = new DBL(process.env.DBL_TOKEN, client);
 function getElementByAttribute(attr, root) {
