@@ -251,7 +251,7 @@ try {
 		} else limiters[message.author.id] = new Date().getTime();
 	};
 	var args = message.content.match(/\S+/g);
-	if (message.content.startsWith("s!kick")){
+	if (message.content.startsWith("b!kick")){
 		var user = message.member.guild.members.find("id", message.content.match(/\d+/)[0]);
 		var reason = args.slice(2).join(" ");
 		if (!user){
@@ -268,7 +268,7 @@ try {
   		  .then(() => {message.reply(`Successfully kicked user`)})
 		  .catch(() => {message.reply(Emojis.warning + " I can't kick this user")});}, 2000);
 	}
-	if (message.content.startsWith("s!ban")){
+	if (message.content.startsWith("b!ban")){
 		var user = message.member.guild.members.find("id", message.content.match(/\d+/)[0]);
 		var reason = args.slice(2).join(" ");
 		if (!user){
@@ -409,7 +409,7 @@ try {
         message.reply({embed: {
             title: "Unbunn Bot",
             color: 3750201,
-	    description: `**Running SebBot ${ver}**\nUnbunn Bot is an open-source multi-purpose discord bot with many fun + NSFW commands. You can see a list of all the commands at **__https://sebbot.tk/branch/unbunn/index.html__**.`,
+	    description: `**Running SebBot ${ver}**\nUnbunn Bot is an open-source multi-purpose discord bot with many fun commands. You can see a list of all the commands at **__https://sebbot.tk/branch/unbunn/index.html__**.`,
             footer: {
                 text: "Unbunn Bot created by SebbyTheGODKid#0426",
                 icon_url: "https://cdn.discordapp.com/avatars/408718297400475668/c7b9be183d4cf2029912533e3afc2e69.png"
@@ -421,9 +421,9 @@ try {
 					    title: "Moderator Commands",
 					    color: 3750201,
 					    description: "```yml"+`
-"s!kick <@user> <reason>":
+"b!kick <@user> <reason>":
   - Kicks <user> from the server with reason <reason>
-"s!ban <@user> <reason>":
+"b!ban <@user> <reason>":
   - Bans <user> from the server with reason <reason>
 `+"```",
 					    footer: {
