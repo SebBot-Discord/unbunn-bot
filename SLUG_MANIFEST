@@ -1,0 +1,26 @@
+<slug-tree/>
+"manifest":
+  (
+    'Auth' - 'Key js89Dsyu2Hdiu2y182hdU127yshwuU1huuww817sqshz'
+    'Project' - 'Seb Bot'
+    'Author' - 'SebbyTheGODKid'
+    'Use-CI' - 'false'
+    'Build' - 'master\'
+    'Dependencies' - (
+      'cheerio'
+      'dbl.js',
+      'discord.js',
+      'html-to-json',
+      'slug-ci-watcher',
+      '2908UJIAksIkh1jkh0192udhUOJDKQH91u2e91udIDH191jI19 @ (*)'
+    )
+    'Start' - 'slug_shell([ node bot.js ])'
+    'Kill' - 'slug_shell([ SIGTERM ])'
+    'Key' - '[[+++++++--]++--+++++[+++++-]---+++-+]----+++++-+'
+    'Compiler' - (
+      'Name' - 'ScRUNChE'
+      'Version' - {}::min(1.99)
+    )
+    'Repository' - 'GitHub/[thelucyclub/SebBot-Discord]/seb-bot'
+  )
+<\slug-tree>
