@@ -481,7 +481,7 @@ try {
 		message.reply({embed:{
 			title: "Invite Unbunn Bot",
             color: 3750201,
-			url: "https://discordapp.com/api/oauth2/authorize?client_id=408718297400475668&permissions=67160064&scope=bot",
+			url: "https://discordapp.com/api/oauth2/authorize?client_id=523239782835421207&permissions=8&redirect_uri=https%3A%2F%2Fsebbot.tk%2Fdiscord-auth-complete.html&scope=bot",
 			//description: "(**Invite**)[https://discordapp.com/api/oauth2/authorize?client_id=408718297400475668&permissions=67160064&scope=bot] **Unbunn Bot to your server**",
 			footer: {
                 text: `Say "bunn!help" for a list of commands`,
