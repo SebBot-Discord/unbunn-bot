@@ -97,7 +97,7 @@ function doNightlyUpdate(skap){try{
       timestamp: new Date()
     }
     var unix = Math.round(+new Date()/1000);
-    return {content: "@here **Nightly Update**", embed: _embed};
+    return {embed: _embed};
   });
 }catch(err){return "Place not found, try a Place ID"}}
 const request = require('request')
