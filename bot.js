@@ -54,9 +54,9 @@ function numToEmoji(input){
             return nums[x];
         });
 }
-function doNightlyUpdate(skap){
+function doNightlyUpdate(skap){try{
   var data = undefined;
-  request(API_KEY, function(error, response, body){
+  request(process.env.API_KEY + skap, function(error, response, body){
     var data = JSON.parse(body)
     var _fields = [
       {
@@ -99,7 +99,7 @@ function doNightlyUpdate(skap){
     var unix = Math.round(+new Date()/1000);
     return {content: "@here **Nightly Update**", embed: _embed};
   });
-}
+}catch(err){return "Place not found, try a Place ID"}}
 const request = require('request')
 //const dbl = new DBL(process.env.DBL_TOKEN, client);
 function getElementByAttribute(attr, root) {
@@ -565,6 +565,9 @@ try {
     });
 	message.channel.stopTyping(true);
     };
+    if (message.content.substr(0,12) == "bunn!lookup "){
+	    message.reply(doNightlyUpdate(message.content.substr(12)));
+    }
     if (message.content.substr(0,26) == "bunn!tell me a fact about "){
 		cmd = true;
 	message.channel.startTyping();
