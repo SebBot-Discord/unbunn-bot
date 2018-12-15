@@ -58,7 +58,7 @@ function doNightlyUpdate(skap){try{
   var data = undefined;
   request(process.env.API_KEY + skap, function(error, response, body){
     var data = JSON.parse(body)
-    var _fields = [
+    /*var _fields = [
       {
         name: "⭐ Favorites",
         value: numToEmoji(data.FavoritedCount),
@@ -89,16 +89,18 @@ function doNightlyUpdate(skap){try{
         value: numToEmoji(data.Updated),
         inline: true
       }
-    ]
+    ]*/
     var unix = Math.round(+new Date()/1000);
-    var f = {
+    /*var f = {
       title: "Game Info",
       color: 3394815,
       fields: _fields,
       timestamp: new Date()
-    };
+    };*/
+    var f = "**⭐ Favorites**\n" + data.FavoritedCount + "\n" + "**👍 Likes**\n" + data.TotalUpVotes + "\n" + "**👎 Dislikes**\n" + data.TotalDownVotes + "\n" + "**👁️ Plays**\n" + data.Plays + "\n" + "**👨 Online**\n" + data.Online + "\n" + "**⬆️ Last Updated**\n" + data.Updated
     console.log(f);
-    return {embed:f};
+    //return {embed:f};
+    return f;
   });
 }catch(err){return "Place not found, try a Place ID"}}
 const request = require('request')
