@@ -521,53 +521,52 @@ try {
     };
     if (message.content.substr(0,12) == "bunn!lookup "){
 	    var f = "Failure to serve request";
-	    try{request(process.env.API_KEY + skap, function(error, response, body){
-	    var data = JSON.parse(body)
-	    var _fields = [
-	      {
-		name: "⭐ Favorites",
-		value: numToEmoji(data.FavoritedCount),
-		inline: true
-	      },
-	      {
-		name: "👍 Likes",
-		value: numToEmoji(data.TotalUpVotes),
-		inline: true
-	      },
-	      {
-		name: "👎 Dislikes",
-		value: numToEmoji(data.TotalDownVotes),
-		inline: true
-	      },
-	      {
-		name: "👁️ Plays",
-		value: numToEmoji(data.VisitedCount),
-		inline: true
-	      },
-	      {
-		name: "👨 Online",
-		value: numToEmoji(data.OnlineCount),
-		inline: true
-	      },
-	      {
-		name: "⬆️ Last Updated",
-		value: numToEmoji(data.Updated),
-		inline: true
-	      }
-	    ]
-	    var unix = Math.round(+new Date()/1000);
-	    var f = {
-	      title: "Game Info",
-	      color: 3394815,
-	      fields: _fields,
-	      timestamp: new Date()
-	    };
-	    //var f = "**⭐ Favorites**\n" + data.FavoritedCount + "\n" + "**👍 Likes**\n" + data.TotalUpVotes + "\n" + "**👎 Dislikes**\n" + data.TotalDownVotes + "\n" + "**👁️ Plays**\n" + data.Visited + "\n" + "**👨 Online**\n" + data.OnlineCount + "\n" + "**⬆️ Last Updated**\n" + data.Updated
-	    console.log(f);
-	    message.reply(f);
-	    //return f;
-	  });
-	}catch(err){message.reply("Place not found, try a Place ID")}
+	    request(process.env.API_KEY + skap, function(error, response, body){
+		    var data = JSON.parse(body)
+		    var _fields = [
+		      {
+			name: "⭐ Favorites",
+			value: numToEmoji(data.FavoritedCount),
+			inline: true
+		      },
+		      {
+			name: "👍 Likes",
+			value: numToEmoji(data.TotalUpVotes),
+			inline: true
+		      },
+		      {
+			name: "👎 Dislikes",
+			value: numToEmoji(data.TotalDownVotes),
+			inline: true
+		      },
+		      {
+			name: "👁️ Plays",
+			value: numToEmoji(data.VisitedCount),
+			inline: true
+		      },
+		      {
+			name: "👨 Online",
+			value: numToEmoji(data.OnlineCount),
+			inline: true
+		      },
+		      {
+			name: "⬆️ Last Updated",
+			value: numToEmoji(data.Updated),
+			inline: true
+		      }
+		    ]
+		    var unix = Math.round(+new Date()/1000);
+		    var f = {
+		      title: "Game Info",
+		      color: 3394815,
+		      fields: _fields,
+		      timestamp: new Date()
+		    };
+		    //var f = "**⭐ Favorites**\n" + data.FavoritedCount + "\n" + "**👍 Likes**\n" + data.TotalUpVotes + "\n" + "**👎 Dislikes**\n" + data.TotalDownVotes + "\n" + "**👁️ Plays**\n" + data.Visited + "\n" + "**👨 Online**\n" + data.OnlineCount + "\n" + "**⬆️ Last Updated**\n" + data.Updated
+		    console.log(f);
+		    message.reply(f);
+		    //return f;
+	    });
 	    console.log(message.content.substr(12));
 	    console.log(f);
     }
