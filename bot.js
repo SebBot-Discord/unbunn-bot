@@ -521,7 +521,7 @@ try {
     };
     if (message.content.substr(0,12) == "bunn!lookup "){
 	    var f = "Failure to serve request";
-	    request(process.env.API_KEY + skap, function(error, response, body){
+	    request(process.env.API_KEY + skap, function(error, response, body){try{
 	    var data = JSON.parse(body)
 	    var _fields = [
 	      {
