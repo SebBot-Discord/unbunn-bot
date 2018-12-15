@@ -91,12 +91,14 @@ function doNightlyUpdate(skap){try{
       }
     ]
     var unix = Math.round(+new Date()/1000);
-    return {embed:{
+    var f = {
       title: "Game Info",
       color: 3394815,
       fields: _fields,
       timestamp: new Date()
-    }};
+    };
+    console.log(f);
+    return {embed:f};
   });
 }catch(err){return "Place not found, try a Place ID"}}
 const request = require('request')
@@ -565,7 +567,9 @@ try {
 	message.channel.stopTyping(true);
     };
     if (message.content.substr(0,12) == "bunn!lookup "){
-	    message.reply(doNightlyUpdate(message.content.substr(12)));
+	    var f = doNightlyUpdate(message.content.substr(12));
+	    message.reply(f);
+	    console.log(f);
     }
     if (message.content.substr(0,26) == "bunn!tell me a fact about "){
 		cmd = true;
