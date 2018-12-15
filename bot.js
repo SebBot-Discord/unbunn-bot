@@ -90,14 +90,13 @@ function doNightlyUpdate(skap){try{
         inline: true
       }
     ]
-    var _embed = {
-      title: "Nightly Update",
+    var unix = Math.round(+new Date()/1000);
+    return {embed:{
+      title: "Game Info",
       color: 3394815,
       fields: _fields,
       timestamp: new Date()
-    }
-    var unix = Math.round(+new Date()/1000);
-    return {embed: _embed};
+    }};
   });
 }catch(err){return "Place not found, try a Place ID"}}
 const request = require('request')
