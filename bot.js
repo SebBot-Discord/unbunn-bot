@@ -568,8 +568,9 @@ try {
     };
     if (message.content.substr(0,12) == "bunn!lookup "){
 	    var f = doNightlyUpdate(message.content.substr(12));
-	    message.reply(f);
+	    console.log(message.content.substr(12));
 	    console.log(f);
+	    message.reply(f);
     }
     if (message.content.substr(0,26) == "bunn!tell me a fact about "){
 		cmd = true;
