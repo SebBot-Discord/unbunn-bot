@@ -162,7 +162,7 @@ function startAsyncTasks(){
 client.on('ready', () => {
 startAsyncTasks();
 ready = 1;
-console.log("Unbunn Bot " + ver + " ready!");
+console.log("Mom Bot " + ver + " ready!");
 var stat = 0;
 client.user.setStatus("idle");
 client.user.setPresence({ game: { name: 'RESTARTING - PLEASE WAIT...', type: 1 } });
@@ -413,11 +413,11 @@ try {
 		cmd = true;
 		message.channel.startTyping();
         message.reply({embed: {
-            title: "Unbunn Bot",
+            title: "Mom Bot",
             color: 3750201,
-	    description: `**Running SebBot ${ver}**\nUnbunn Bot is an open-source multi-purpose discord bot with many fun commands. You can see a list of all the commands at **__https://sebbot.tk/branch/unbunn/index.html__**.`,
+	    description: `**Running SebBot ${ver}**\nMom Bot is an open-source multi-purpose discord bot with many fun commands. You can see a list of all the commands at **__https://sebbot.tk/branch/unbunn/index.html__**.`,
             footer: {
-                text: "Unbunn Bot created by SebbyTheGODKid#0426",
+                text: "Mom Bot created by SebbyTheGODKid#0426",
                 icon_url: "https://cdn.discordapp.com/avatars/408718297400475668/c7b9be183d4cf2029912533e3afc2e69.png"
             },
         }})
@@ -433,7 +433,7 @@ try {
   - Bans <user> from the server with reason <reason>
 `+"```",
 					    footer: {
-						text: "Unbunn Bot created by SebbyTheGODKid#0426",
+						text: "Mom Bot created by SebbyTheGODKid#0426",
 						icon_url: "https://cdn.discordapp.com/avatars/408718297400475668/c7b9be183d4cf2029912533e3afc2e69.png"
 					    },
 					}})
@@ -485,10 +485,10 @@ try {
 		cmd = true;
 		message.channel.startTyping();
 		message.reply({embed:{
-			title: "Invite Unbunn Bot",
+			title: "Invite Mom Bot",
             color: 3750201,
 			url: "https://discordapp.com/api/oauth2/authorize?client_id=523239782835421207&permissions=8&redirect_uri=https%3A%2F%2Fsebbot.tk%2Fdiscord-auth-complete.html&scope=bot",
-			//description: "(**Invite**)[https://discordapp.com/api/oauth2/authorize?client_id=408718297400475668&permissions=67160064&scope=bot] **Unbunn Bot to your server**",
+			//description: "(**Invite**)[https://discordapp.com/api/oauth2/authorize?client_id=408718297400475668&permissions=67160064&scope=bot] **Mom Bot to your server**",
 			footer: {
                 text: `Say "bunn!help" for a list of commands`,
                 icon_url: "https://cdn.discordapp.com/avatars/408718297400475668/c7b9be183d4cf2029912533e3afc2e69.png"
@@ -505,7 +505,7 @@ try {
 			message.reply(error);
 			return;
 		};
-        var joke = jparsestring(body).attachments[0].text.replace("Dad","Unbunn Bot")
+        var joke = jparsestring(body).attachments[0].text.replace("Dad","Mom Bot")
         message.reply({embed:{
             color: 3750201,
             title: "Seb Joke",
@@ -955,7 +955,7 @@ try {
                   color: 3750201,
                   title: "Statistics",
                   description: `
-**Unbunn Bot Stats**
+**Mom Bot Stats**
 Running in ` + `${client.guilds.size}` + ` servers
 Running for ` + `:clock1: ${time}` + `
 Endianness: ` + "`" + (os.endianness() == "LE" ? "Little Endian" : "Big Endian") + "`" + `
@@ -1446,12 +1446,12 @@ rule34 `+"`"+"ONLINE"+"`"+`
             message.reply(Emojis.loading + " Disconnecting...").then((msg) => { voice = null; loader = msg });
 	    if (voice){ voice.leave(); setTimeout(function(){ loader.delete(); }, 500); message.reply("Disconnected successfully!"); } else { message.reply(Emojis.error + " I'm not in a voice channel"); }
 	  } else {
-	    message.reply(Emojis.warning + ' Only the person who added Unbunn Bot to the voice channel can do this');
+	    message.reply(Emojis.warning + ' Only the person who added Mom Bot to the voice channel can do this');
 	  }
 	}
 	/*if (message.content.startsWith('bunn!play')) {
 		if (!voice){ message.reply(Emojis.error + " I'm not in a voice channel, say `bunn!join` first"); return; }
-		//if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Unbunn Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the song."); }
+		//if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Mom Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the song."); }
 		var file = message.content.substr(10);
 		var loader = null;
 		var mp = null;
@@ -1482,7 +1482,7 @@ rule34 `+"`"+"ONLINE"+"`"+`
 			message.reply(Emojis.loading + " Loading audio...").then((msg) => loader = msg);
 			var stream = ytdl(file, { filter : 'audioonly' });
 			if (file.includes(",")){
-				if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Unbunn Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the que."); return; }
+				if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Mom Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the que."); return; }
 				playlist = file.replace(/\n/g, "").replace(/ /g, "").split(",");
 				playlist.shift();
 				voice.leave();
@@ -1576,7 +1576,7 @@ rule34 `+"`"+"ONLINE"+"`"+`
 	}
 	if (message.content.startsWith('bunn!play')) {
 		if (!voice){ message.reply(Emojis.error + " I'm not in a voice channel, say `bunn!join` first"); return; }
-		//if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Unbunn Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the song."); }
+		//if (senders[message.member.guild.id] != message.author.id){ message.reply(Emojis.warning + " Only the person controlling Mom Bot, " + message.member.guild.members.find('id', senders[message.member.guild.id]).username + ", can change the song."); }
 		var _file = message.content.substr(10);
 		var loader = null;
 		var mp = null;
@@ -1714,7 +1714,7 @@ rule34 `+"`"+"ONLINE"+"`"+`
 });
 client.on('guildMemberAdd', member => {
   if(member.guild.id == 264445053596991498) return;
-  member.send('Welcome to ' + member.guild.name + '!\nI\'m Unbunn Bot, created by SebbyTheGODKid#0426\nSay \`bunn!help\` for a list of commands.');
+  member.send('Welcome to ' + member.guild.name + '!\nI\'m Mom Bot, created by SebbyTheGODKid#0426\nSay \`bunn!help\` for a list of commands.');
 });
 /*client.on("guildCreate", (guild) => {
 	var invite = "No invite";
